@@ -14,14 +14,15 @@ public class BigIntPlus{
 		firstToString();
 		secondToString();
 		checkSize();
+		sumPlus();
 	}
 	public void firstToString(){
-		for(int i = first.length();i>=0;i--){
+		for(int i = first.length()-1;i>=0;i--){
 			number1.add(Integer.valueOf(String.valueOf(first.charAt(i))));
 		}
 	}
 	public void secondToString(){
-		for(int i = second.length();i>=0;i--){
+		for(int i = second.length()-1;i>=0;i--){
 			number2.add(Integer.valueOf(String.valueOf(second.charAt(i))));
 		}
 	}
@@ -41,7 +42,7 @@ public class BigIntPlus{
 		for(int i = 0;i<number1.size();i++){
 			sum.add(number1.get(i)+number2.get(i));
 		}
-		for(int i = 0;i<sum.size();i++){
+		for(int i = 0;i<sum.size()-1;i++){
 			if(sum.get(i)>=10){
 				sum.set(i+1,sum.get(i+1)+1);
 				sum.set(i,sum.get(i)%10);
@@ -49,7 +50,7 @@ public class BigIntPlus{
 		}
 	}
 	public void printSum(){
-		for(int i = sum.size();i>=0;i--){
+		for(int i = sum.size()-1;i>=0;i--){
 			System.out.print(sum.get(i));
 		}
 	}
