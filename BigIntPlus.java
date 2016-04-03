@@ -37,4 +37,20 @@ public class BigIntPlus{
 			}
 		}
     }
+	public void sumPlus(){
+		for(int i = 0;i<number1.size();i++){
+			sum.add(number1.get(i)+number2.get(i));
+		}
+		for(int i = 0;i<sum.size();i++){
+			if(sum.get(i)>=10){
+				sum.set(i+1,sum.get(i+1)+1);
+				sum.set(i,sum.get(i)%10);
+			}
+		}
+	}
+	public void printSum(){
+		for(int i = sum.size();i>=0;i--){
+			System.out.print(sum.get(i));
+		}
+	}
 }
